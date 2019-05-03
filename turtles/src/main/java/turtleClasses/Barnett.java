@@ -32,8 +32,8 @@ public class Barnett {
 		factors.add(3);
 //		factors.add(3);
 //		factors.add(3);
-//		factors.add(4);
-		factors.add(5);
+		factors.add(4);
+//		factors.add(5);
 //		factors.add(6);
 		factors.add(7);
 //		factors.add(8);
@@ -46,7 +46,7 @@ public class Barnett {
 //		b.drawPolygonCorner(5, 1000);
 //		b.test();
 	}
-	Color[] colors = {Color.BLACK,Color.BLACK,Color.RED,Color.ORANGE,Color.YELLOW,Color.GREEN,Color.BLUE,Color.MAGENTA,Color.PINK};
+	Color[] colors = {Color.RED,Color.ORANGE,Color.YELLOW,Color.GREEN,Color.BLUE,Color.MAGENTA,Color.PINK};
 	double scaleDownFactor = 2;
 	public void visualize(double scale,List<Integer> factors) {
 		if (factors.size()>0) {
@@ -62,8 +62,7 @@ public class Barnett {
 				turtle.backward((int)((scale/(factor*2))*Math.sqrt(factor)));
 			}
 			*/
-			if (factor<3 || factor>=colors.length) turtle.setColor(Color.BLACK);
-			else turtle.setColor(colors[factor]);
+			turtle.setColor(colors[factor%colors.length]);
 			int segment = (int) scale / factor;
 			double turn = 360.0 / factor;
 			
